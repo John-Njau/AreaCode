@@ -7,37 +7,30 @@
   <!-- to display post about me etc -->
   <section class="">
     <div class="row">
-      <div class="col-md-2 text-white bg-primary p-3">
+      <div class="col-md-2 bg-dark p-3">
         {% block sidebar %} {% include
           "sidebar.html" %} {% endblock %}
-        <h2></h2>
-        <button class="">
-          <a class="btn btn-light m-2" href="">My Profile</a> <br>
-          <a class="btn btn-light m-2" href="{{url_for('posts.new_post')}}">New Post</a> <br>
-          <a class="btn btn-light m-2" href="">Posts</a>
-        </button>
       </div>
-      <div class="col-md-8 text-center bg-white">
-        <p class="text-dark">Hello {{current_user.username}}! What's happening in {{current_user.locations}} Today?</p>
+      <div class="col-md-8 bg-primary" style="">
+        <br>
+        <br>
+        <marquee behavior="scroll" direction="left" scrollamount="5" class="text-white">Hello {{current_user.username}}! What's happening in {{current_user.locations}} Today?</marquee>
         <hr>
         <div class="container d-flex">
-          <div class="text-center" 
-          style="width:100%;
-          height:30vh">
+          <div class="text-center">
             {{macro.display_posts(posts, commentform, current_user)}}
           </div>
         </div>
       </div>
       <div class="col-md-2 bg-dark">
-        <button id="popbtn" class="btn btn-danger">Popular</button>
-        <h2 >Popular </h2>
+        <h2 >Recent Posts </h2>
         <div class="form-group">
           <label for=""></label>
-          <input type="search" name="" id="" class="form-control" placeholder="search post">
+          <input type="search" name="" id="" class="form-control" placeholder="search post...">
+          <button id="popbtn" class="btn btn-light">Search</button>
         </div>
         {{macro.display_latestposts(recent_posts, current_user)}}
       </div>
-
     </div>
   </section>
 </div>

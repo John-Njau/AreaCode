@@ -6,7 +6,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     <div class="collapse navbar-collapse position-absolute top-0 end-0" id="navbarsExample02">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto m-2 mb-lg-0">
         {% if current_user.is_authenticated %}
         <li class="nav-item float-end">
           <a class="nav-link active text-white" href="{{url_for('home.homepage', user_id=current_user.id)}}">Home</a>
@@ -15,7 +15,7 @@
           <a class="nav-link active text-white" href="{{url_for('home.profile', user_id=current_user.id)}}">Profile</a>
         </li>
         <li class="nav-item float-end">
-          <a class="nav-link active text-white" href="{{url_for('auth.logout')}}">LOGOUT</a>
+          <a class="nav-link active text-white" href="{{url_for('auth.logout')}}">Logout</a>
         </li>
         {% else %}
         <ul class="navbar-nav mr-auto mb-2 mb-lg-0">

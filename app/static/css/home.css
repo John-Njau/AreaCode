@@ -12,13 +12,13 @@ body{
 .card{
     /* border: 2px solid #5b5f63; */
     box-shadow: 2px 2px 2px 2px #000000;
-    background-color: rgba(23, 87, 176, 0.669);
+    /* background-color: rgba(23, 87, 176, 0.669); */
     opacity: 0.8;
     border-radius:15px;
     /* padding-top: 30px; */
-    color:white;
-    font-size:22px;
-    font-weight:200;
+    /* color:white; */
+    /* font-size:22px; */
+    /* font-weight:200; */
 }
 /* .card-body{ */
     /* justify-content:center; */
@@ -31,7 +31,7 @@ body{
 }
 span{
     color:#020202;
-    font-size: 20px;
-    font-weight: 300
+    /* font-size: 20px; */
+    /* font-weight: 300 */
 }
 
