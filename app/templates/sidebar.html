@@ -1,0 +1,42 @@
+<link href="{{url_for('static',filename='css/sidebar.css')}}" rel="stylesheet" />
+<div class="flex-shrink-0 p-3 bg-primary text-center" style="width: 280px;">
+  <a href="" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none text-dark border-bottom">
+    <svg class="bi me-2" width="30" height="24">
+      <use xlink:href="#bootstrap" />
+    
+    </svg>
+    <button class="btn btn-secondary">Home</button>
+  </a>
+  <!-- profile image -->
+  <div>
+    <img src="" class='bg-dark' alt="" 
+    style="width:150px;
+    height:150px;
+    border-radius:50%;
+     ">
+      <br>
+     <span class="fs-5 fw-semibold text-dark">@{{current_user.username}}</span> <br>
+     <p class="fs-5 fw-semibold">{{current_user.firstname}} {{current_user.lastname}}</p> 
+  </div>
+  <ul class="list-unstyled ps-0">
+    <h2></h2>
+    <div class="">
+      <a class="btn btn-light m-2" href="{{url_for('posts.new_post')}}">New Post</a> <br>
+      <a class="btn btn-light m-2" href="">Posts</a>
+    </div>
+    <li class="border-top my-3"></li>
+    <li class="mb-1">
+      <a href="{{url_for('home.profile')}}">
+      <button class="btn btn-dark btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+        data-bs-target="#account-collapse"  aria-expanded="false">
+        My Profile
+      </button></a>
+      <a href="{{url_for('auth.logout')}}">
+      <button class="btn btn-dark btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+      data-bs-target="#account-collapse"  aria-expanded="false">
+      Log Out
+    </button></a>
+  
+    </li>
+  </ul>
+</div>
