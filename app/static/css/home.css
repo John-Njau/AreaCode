@@ -7,14 +7,14 @@
 }
 body{
     font-family: 'Poppins', sans-serif;
-    color:white;
+    /* color:white; */
 }
 .card{
     /* border: 2px solid #5b5f63; */
-    box-shadow: 2px 2px 2px 2px #000000;
+    /* box-shadow: 2px 2px 2px 2px #000000; */
     /* background-color: rgba(23, 87, 176, 0.669); */
-    opacity: 0.8;
-    border-radius:15px;
+    /* opacity: 0.8; */
+    /* border-radius:15px; */
     /* padding-top: 30px; */
     /* color:white; */
     /* font-size:22px; */

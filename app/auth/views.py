@@ -14,6 +14,7 @@ def register():
                     lastname=form.lastname.data,
                     email=form.email.data,
                     username=form.username.data,
+                    profile_pic = form.profile_pic.data,
                     password=form.password.data,
                     locations=form.location.data)
         db.session.add(user)

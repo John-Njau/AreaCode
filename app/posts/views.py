@@ -20,7 +20,7 @@ def new_post():
         
         db.session.add(post)
         db.session.commit()
-        flash('Your post has been created!', 'success')
+        # flash('Your post has been created!', 'success')
         return redirect(url_for('home.homepage'))
 
     return render_template('post/create_post.html', title='New Post',

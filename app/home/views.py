@@ -9,11 +9,13 @@ from flask_login import current_user, login_required
 from PIL import Image
 import os
 import secrets
+from werkzeug.utils import secure_filename
+
 
 @home.route('/home')
 @login_required
 def homepage():
-    title = "AreaCode --Homepage"
+    title = "AreaCode -- Home"
     commentform = CommentForm()
     posts = all_posts(Post.query.order_by(desc('post_created')))
     recent_posts = all_posts(Post.query.order_by(desc('post_created')).limit(5))
@@ -48,7 +50,7 @@ def add_comment(post_id):
         user = User.query.filter_by(id=current_user.id).first()
         comment = {'comment':commentform.commentbody.data, 'user':user.username,
                    'post':post_id}
-        flash("New comment added success successfully", 'success')
+        # flash("New comment added success successfully", 'success')
         return jsonify(comment)
         # return redirect(url_for('index.html', user_id=current_user.id))
     return render_template('index.html', title=title)
@@ -68,9 +70,6 @@ def profile():
         db.session.commit()
         return render_template('profile/profile.html', user=user, form=form)
     return render_template('profile/profile.html', user=user, form=form)
-
-
-
 
 def save_profile_picture(form_picture):
     random_hex = secrets.token_hex(8)
@@ -95,7 +94,7 @@ def update_profile():
 
 @home.route('/user/pic',methods= ['GET','POST'])
 def update_pic(user_id):
-    user = User.query.filter_by(user_id=user_id).first()
+    user = current_user
     if 'photo' in request.files:
         filename = photos.save(request.files['photo'])
         path = f'photos/{filename}'

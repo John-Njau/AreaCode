@@ -7,23 +7,24 @@
   <!-- to display post about me etc -->
   <section class="">
     <div class="row">
-      <div class="col-md-2 bg-dark p-3">
+      <div class="col-md-2 p-3" style="background-color:rgb(23, 26, 228);">
         {% block sidebar %} {% include
           "sidebar.html" %} {% endblock %}
       </div>
-      <div class="col-md-8 bg-primary" style="">
+      <div class="col-md-8 bg-light">
         <br>
         <br>
-        <marquee behavior="scroll" direction="left" scrollamount="5" class="text-white">Hello {{current_user.username}}! What's happening in {{current_user.locations}} Today?</marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="5" class="text-dark">Hello  <em>{{current_user.username}}!</em>
+          What's happening in <em>{{current_user.locations}}</em>  Today?</marquee>
         <hr>
-        <div class="container d-flex">
+        <div class="container">
           <div class="text-center">
             {{macro.display_posts(posts, commentform, current_user)}}
           </div>
         </div>
       </div>
-      <div class="col-md-2 bg-dark">
-        <h2 >Recent Posts </h2>
+      <div class="col-md-2" style="background-color: #000">
+        <h2 class="text-white">Recent Posts </h2>
         <div class="form-group">
           <label for=""></label>
           <input type="search" name="" id="" class="form-control" placeholder="search post...">

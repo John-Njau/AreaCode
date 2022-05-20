@@ -83,6 +83,11 @@ class Post(db.Model, Crud):
         user.posts.remove(self)
         self.delete()
         return self.save()
+    
+    def update(self):
+        post = Post.query.filter_by(id=self.id).first()
+        post.post = self.post
+        return post.save()
    
 
 class Comment(db.Model, Crud):
