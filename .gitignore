@@ -2,3 +2,5 @@ blogvirtual/
 *.pyc
 __pychache__/
 virt/
+env/
+*.sh
