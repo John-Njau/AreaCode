@@ -5,7 +5,7 @@ from  flask_migrate import Migrate, MigrateCommand
 from flask_wtf.csrf import CSRFProtect
 
 # Creating app instance
-app = create_app('development')
+app = create_app('production')
 csrf = CSRFProtect(app)
 app.config['SECRET_KEY'] = "secretkey"
 app.config['WTF_CSRF_SECRET_KEY'] = "secretkey"
